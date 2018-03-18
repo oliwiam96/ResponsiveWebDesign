@@ -1,0 +1,166 @@
+html{
+    position: relative; //make footer stick to bottom of page correctly
+    min-height: 100%;
+}
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+    padding: 10px;
+}
+* {
+    box-sizing: border-box;
+    font-family: Tahoma 
+}
+
+$my_font_size: 16px;
+
+.header > h1{
+    font-size: 2*$my_font_size;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    #title{
+        font-family:  serif;
+    }
+    img{ 
+        height: 70px;
+    }
+}
+
+.footer{
+    background-color: lightgray;
+    text-align: center;
+    border-top: 1px solid;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .author{
+        font-weight: bold;
+    }
+}
+
+h1{
+    font-weight: normal;
+}
+
+nav{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+}
+nav > #navigation_list > a{
+    padding-right: 10px;
+    font-family: serif;
+}
+
+.my_container{
+    background-color: lightgray;
+    border: 1px solid;
+    border-color: black;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.my_container > h1{
+    font-size: 1.5*$my_font_size;
+    position: relative;
+    right: -11px;
+    margin-top: -11px;
+    float: right;
+    color: black;
+    width: 130px;
+    padding: 5px;
+    border: 1px solid;
+    border-color: black;
+    text-align: center;
+}
+.my_container > p {
+    clear: right;
+    text-align:justify;  
+    text-justify:auto;
+    padding: 10px;
+}
+
+#first > h1{
+    background-color: lightblue;
+}
+#second > h1{
+    background-color: orange;
+}
+#third > h1{
+    background-color: pink;
+}
+#hamburger{
+    background-color: lightgray;
+    padding: 10px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 10px;
+
+}
+#hamburger > div{
+    width: 35px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    #title{
+        display: none;
+    }
+    #navigation_list{
+        display: none;
+    }
+    #first{ // prevent margin collapse
+            margin-bottom: 20px;
+    }
+    #second{ // prevent margin collapse
+             margin-bottom: 20px;
+    }
+
+}
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+    .wrapper  {
+        display: flex;
+    }
+    #hamburger {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #first{
+        flex-basis: max-content;
+    }
+    #second{
+        flex: 1;
+    }
+
+    #third{
+        flex: 1;
+    }
+
+    #navigation_list{
+        display: none;
+    }
+    #hamburger{
+        display: block;
+    }
+
+}
